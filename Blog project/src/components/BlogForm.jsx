@@ -50,7 +50,7 @@ const BlogForm = ({blogs, setBlogs}) => {
     return (
         <div className='blog-form'>
         <form onSubmit={handleFormSubmit}>
-        <h2>Create a form</h2>
+        <h4>Create your travel blog</h4>
         <div>
             <input 
             type = 'text'
@@ -81,15 +81,6 @@ const BlogForm = ({blogs, setBlogs}) => {
             />
         </div>
         <div>
-            <label> Date: </label>
-            <input 
-            type = 'date'
-            name= 'date'  
-            value= {formData.date}
-            onChange={handleInputChange}
-            />
-        </div>
-        <div>
             <input 
             type = 'text'
             name= 'author'
@@ -98,6 +89,15 @@ const BlogForm = ({blogs, setBlogs}) => {
             onChange={handleInputChange}
             />
         </div>
+        <div>
+            <input 
+            type = 'date'
+            name= 'date'  
+            value= {formData.date}
+            onChange={handleInputChange}
+            />
+        </div>
+      
         <button type="submit">Create Blog</button>
         </form>
       </div>

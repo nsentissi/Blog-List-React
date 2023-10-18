@@ -1,42 +1,112 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+
+
+  
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3e5d5d;
+  color: #fff; 
+  padding: 1rem 2rem;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav-left {
+  margin-left: 3rem;
+  letter-spacing: 0.6rem;
+} 
+
+
+.nav-right {
+  display: flex;
+  gap: 2rem
+
 }
+
+.blog-form {
+  padding: 20px;
+  background: #c5e4f3;
+ 
+  
+  
+}
+
+
+
+form{
+  margin: 0 auto;
+  width: 500px;
+  padding-top: 40px;
+  color: white;
+  position: relative;
+  height: 100%; 
+  border-radius: 49px;
+  background: #41adc8;
+  box-shadow:  6px 6px 12px #3997ae,
+             -6px -6px 12px #49c3e2;  
+  overflow: hidden;
+  position: relative;
+  padding: 2rem;
+ 
+
+  
+  
+}
+
+
+ .listBlogs {
+  background-image: url(./assets/backgroundpicture.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;
+ }
+
+
+
+.long-text {
+  max-height: 10rem;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.5s;
+  
+}
+
+.text {
+  max-height: none;
+  
+}
+
 
 .card {
-  padding: 2em;
+transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+margin-top: 4rem;
 }
 
-.read-the-docs {
-  color: #888;
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+
+
+.listBlogs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10rem;
+  
+
+
+
 }
