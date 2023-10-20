@@ -48,64 +48,72 @@ const BlogForm = ({blogs, setBlogs}) => {
   
   
     return (
-      
-        <div className='blog-form'>
-        <form onSubmit={handleFormSubmit}>
+      <div className='blog-form'>
+      <form onSubmit={handleFormSubmit}>
         <h4>Create your travel blog</h4>
-        <div>
-            <input 
-            type = 'text'
-            name= 'title'  
-            placeholder='Title:'
-            value= {formData.title}
+        <div className="inputGroup">
+          <input
+            type="text"
+            required=""
+            autoComplete="off"
+            name="title"
+            value={formData.title}
             onChange={handleInputChange}
-            />
+          />
+          <label for="name">Title</label>
         </div>
-        <div>
-            <input 
-            type = 'text'
-            name= 'image' 
-            src='' 
-            placeholder='Image Url :'
-            value= {formData.image}
+
+        <div className="inputGroup">
+          <input
+            type="text"
+            required=""
+            autoComplete="off"
+            name="image"
+            value={formData.image}
             onChange={handleInputChange}
-            />
+          />
+          <label for="name">Image Url</label>
         </div>
-        <div>
-            <textarea 
-            type = 'text'
-            name= 'description'  
-            placeholder= 'Description :'
-            value= {formData.description}
+
+        <div className="inputGroup">
+          <textarea
+            required=""
+            name="description"
+            value={formData.description}
             onChange={handleInputChange}
-            rows="5" cols="19"
-            />
+            rows="5"
+            cols="19"
+            placeholder='Description'
+          />
+          
         </div>
-        <div>
-            <input 
-            type = 'text'
-            name= 'author'
-            placeholder='Author'
-            value= {formData.author}  
+
+        <div className="inputGroup">
+          <input
+            type="text"
+            required=""
+            autoComplete="off"
+            name="author"
+            value={formData.author}
             onChange={handleInputChange}
-            />
+          />
+          <label for="name">Author</label>
         </div>
-        <div>
-            <input 
-            type = 'date'
-            name= 'date'  
-            value= {formData.date}
+
+        <div className="inputGroup">
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
             onChange={handleInputChange}
-            />
+          />
+          <label for="name">Date</label>
         </div>
-      
-        <button type="submit">Create Blog</button>
-        </form>
-        <div class="form__group field">
-    <input type="input" class="form__field" placeholder="Name" required=""/>
-    <label for="name" class="form__label">Name</label>
-</div>
-      </div>
+
+        <button className='button' type="submit">Create Blog</button>
+      </form>
+    </div>
+        
 
       
    
