@@ -48,6 +48,7 @@ const BlogForm = ({blogs, setBlogs}) => {
   
   
     return (
+      
         <div className='blog-form'>
         <form onSubmit={handleFormSubmit}>
         <h4>Create your travel blog</h4>
@@ -100,7 +101,13 @@ const BlogForm = ({blogs, setBlogs}) => {
       
         <button type="submit">Create Blog</button>
         </form>
+        <div class="form__group field">
+    <input type="input" class="form__field" placeholder="Name" required=""/>
+    <label for="name" class="form__label">Name</label>
+</div>
       </div>
+
+      
    
         )
 

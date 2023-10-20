@@ -85,7 +85,10 @@ const BlogList = ({blogs, setBlogs}) => {
     
 
             {blogs.map(blog=>{
-               return <Blog key={blog.id} blog={blog} blogs={blogs} setBlogs={setBlogs} isLongTextExpanded= {isLongTextExpanded} setLongTextExpanded={setLongTextExpanded} toggleLongText={toggleLongText} />
+              
+                return <Blog key={Date.now()} blog={blog} blogs={blogs} setBlogs={setBlogs} isLongTextExpanded= {isLongTextExpanded} setLongTextExpanded={setLongTextExpanded} toggleLongText={toggleLongText} />
+              
+              
             })}
         
         </div>
