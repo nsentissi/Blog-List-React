@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Comments({comment, index, isLongTextExpanded}) {
+export default function Comments({comment, index, isBlogExtended}) {
   return (
     <div className='imessage'>
-     {isLongTextExpanded ? <p className='from-them'>{comment}</p> : ''}
+     {isBlogExtended ? <p className='from-them'>{comment}</p> : ''}
     </div>
   )
 }

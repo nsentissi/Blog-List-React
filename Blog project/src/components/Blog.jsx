@@ -6,11 +6,13 @@ function Blog({
   blog,
   blogs,
   setBlogs,
-  isLongTextExpanded,
-  setLongTextExpanded,
-  toggleLongText,
 }) {
   const [commentText, setCommentText] = useState("");
+  const [isBlogExtended, setBlogExtended] = useState(false)
+
+  const toggleLongText = () => {
+    setBlogExtended(!isBlogExtended);
+  };
 
   const handleAddComment = (e) => {
     e.preventDefault();
@@ -36,19 +38,19 @@ function Blog({
   };
 
   return (
-    <div key={blog.id} className="card" style={{ width: "25rem" }}>
+    <div key={blog.id} className="card" style={{ width: "30rem" }}>
       <img src={blog.image} className="card-img-top" alt={blog.title} />
       <div className="card-body">
-        <h5 className="card-title">{blog.title}</h5>
+        <h5 className="card-title" style={{ color: "#4169E1", fontSize:"1.5rem", marginBottom:"2rem" }} >{blog.title}</h5>
         <p
-          className={`card-text ${isLongTextExpanded ? ".text" : "long-text"}`}
+          className={`card-text ${isBlogExtended ? ".text" : "long-text"}`}
         >
           {blog.description}
         </p>
         <p className="card-text">{blog.date}</p>
-        <p className="card-text">{blog.author}</p>
+        <p className="card-text" style={{ fontSize: "1.15rem", fontStyle: "italic" }}>{blog.author}</p>
         <a onClick={toggleLongText} className="btn btn-info">
-          {isLongTextExpanded ? "Show less" : "Show more"}
+          {isBlogExtended ? "Show less" : "Show more"}
         </a>
         <div className="reactions">
           <div className="Like-section">
@@ -67,7 +69,7 @@ function Blog({
               <span class="likeCount">{blog.likes}</span>
             </button>
           </div>
-          {isLongTextExpanded ? (
+          {isBlogExtended ? (
             <div className="comment-section">
               <h5>Comments : </h5>
               <br />
@@ -94,7 +96,7 @@ function Blog({
                     <Comments
                       comment={comment}
                       index={index}
-                      isLongTextExpanded={isLongTextExpanded}
+                      isBlogExtended={isBlogExtended}
                     />
                   );
                 })
